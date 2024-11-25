@@ -5,7 +5,7 @@ import React from "react";
 
 const UserMenu = ({ loggedIn }: { loggedIn: boolean }) => {
   return (
-    <div className="absolute top-full right-0 bg-[#fff] z-[99] flex flex-col gap-4 px-4 py-0 w-[280px] h-full shadow-sm shadow-slate-200 {/* styles.menu */}">
+    <div className="absolute top-[34px] right-0 bg-[#eeebeb] z-[99] flex flex-col gap-4 px-4 py-0 w-[280px] min-h-full rounded-lg shadow-md shadow-gray-400 {/* styles.menu */}">
       <h4 className="text-center">Welcome to Shop Center</h4>
       {loggedIn ? (
         <div className="flex gap-[10px] w-full px-0 py-4 {/* styles.flex */}">
@@ -13,15 +13,15 @@ const UserMenu = ({ loggedIn }: { loggedIn: boolean }) => {
             src={
               "https://www.pngarts.com/files/5/User-Avatar-PNG-Transparent-Image.png"
             }
-            className="max-h-8 max-w-12  {/* styles.menu__img */}"
-            width={40}
-            height={40}
+            className="{/* styles.menu__img */}"
+            width={100}
+            height={100}
             alt="User"
           />
-          <div className="  {/* styles.col */}">
-            <span>Welcome Back,</span>
+          <div className="flex flex-col {/* styles.col */}">
+            <span className="text-xs">Welcome Back,</span>
             <h3>M234234</h3>
-            <span>Sign Out</span>
+            <span className="text-sm text-blue-700 underline">Sign Out</span>
           </div>
         </div>
       ) : (
@@ -54,16 +54,6 @@ const UserMenu = ({ loggedIn }: { loggedIn: boolean }) => {
         <li className="h-7 flex items-center">
           <Link className="w-full pl-4" href={"profile/wishlist"}>
             Wishlist
-          </Link>
-        </li>
-        <li className="h-7 flex items-center">
-          <Link className="w-full pl-4" href={"profile/address"}>
-            Address
-          </Link>
-        </li>
-        <li className="h-7 flex items-center">
-          <Link className="w-full pl-4" href={"profile/address"}>
-            Address
           </Link>
         </li>
       </ul>
