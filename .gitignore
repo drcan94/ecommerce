@@ -41,3 +41,4 @@ next-env.d.ts
 
 /.trunk
 /package-lock.json
+src/utils/GeoData/GeoLite2-City.mmdb

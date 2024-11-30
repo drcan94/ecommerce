@@ -7,6 +7,8 @@ import { Toaster } from "sonner";
 
 import "./globals.css";
 import { ModalProvider } from "@/components/providers/ModalProvider";
+import { getClientGeoData } from "@/utils/GeoData/geo";
+import { GeoProvider } from "@/components/providers/GeoProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,8 +25,10 @@ interface Props {
   readonly children: ReactNode;
 }
 
-export default function RootLayout({ children }: Props) {
-  // connectToMongoDB();
+export default async function RootLayout({ children }: Props) {
+  const geoData = await getClientGeoData();
+
+  connectToMongoDB();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -36,7 +40,7 @@ export default function RootLayout({ children }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased break-words`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen overflow-auto antialiased break-words`}
       >
         <StoreProvider>
           <ThemeProvider
@@ -46,9 +50,11 @@ export default function RootLayout({ children }: Props) {
             disableTransitionOnChange
             storageKey="e-commerce-dev"
           >
-            <Toaster position="bottom-center" />
-            <ModalProvider />
-            {children}
+            <GeoProvider initialData={geoData}>
+              <Toaster position="bottom-center" />
+              <ModalProvider />
+              {children}
+            </GeoProvider>
           </ThemeProvider>
         </StoreProvider>
       </body>

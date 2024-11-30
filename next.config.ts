@@ -16,6 +16,25 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/files/**",
       },
+      {
+        protocol: "https",
+        hostname: "digitalasset.intuit.com",
+        port: "",
+        pathname: "/render/content/dam/**",
+      },
+      // Mailchimp'in kullandığı diğer domainler için
+      {
+        protocol: "https",
+        hostname: "*.mailchimp.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

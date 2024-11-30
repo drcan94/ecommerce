@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+        "mailchimp",
+        "maxmind"
+    ],
+    "files.associations": {
+        "*.tsx": "typescriptreact",
+        "*.ts": "typescript"
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
+}

@@ -8,11 +8,11 @@ interface Props {
 
 export const MainLayout = ({ children }: Props) => {
   return (
-    <>
+    <div className="flex flex-col justify-between min-h-screen">
       <Header />
-      <main>{children}</main>
+      <main className="flex-1 p-4">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
