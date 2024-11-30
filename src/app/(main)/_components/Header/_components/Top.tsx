@@ -188,13 +188,11 @@ const Top = () => {
                     </div>
                     <Button
                       onClick={refreshLocation}
-                      className="p-1 w-7 h-7 hover:bg-blue-500 rounded-full transition-all"
+                      className="p-1 w-7 h-7 text-gray-100 hover:bg-blue-500 dark:text-gray-900 dark:hover:bg-blue-600 dark:hover:!text-gray-100 rounded-full transition-all"
                       disabled={isRefreshing}
                     >
                       <RefreshCw
-                        className={`!text-gray-100  ${
-                          isRefreshing ? "animate-spin" : ""
-                        }`}
+                        className={`${isRefreshing ? "animate-spin" : ""}`}
                       />
                     </Button>
                   </DropdownMenuItem>
